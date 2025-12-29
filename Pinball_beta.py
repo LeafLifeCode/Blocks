@@ -159,8 +159,8 @@ while True:
             chat.clear()
             chat=[Obj("Block.gif") for pin in range(blocks)]
             ball.home()
-            ball.bx+=1
-            ball.by+=1
+            ball.bx+=0.2
+            ball.by+=0.2
             wn.update()
     if player.lives<1:
         score.over()
@@ -172,4 +172,5 @@ while True:
         break
 
 wn.exitonclick()
+
 print("Score:",player.score)
