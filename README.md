@@ -6,8 +6,8 @@ This simple games uses turtle module in python. The objects used include:
   - Blocks
 
 2. **Drawing objects**
-  -Score
-  -Border
+  - Score
+  - Border
 
 # Functions of objects:
 1. **Player**
@@ -46,13 +46,13 @@ Handles:
   - Game Over screen
 
 # Controls:
-|-----------------| --------------------------------------|
+
 | Key             | Action                                |
 |-----------------|---------------------------------------|
 | **LeftArrow**   | Move paddle to the left               |
 | **Right Arrow** | Move paddle to the right              |
 | **Mouse Click** | Exit game after Game Over             |
-|-----------------|---------------------------------------|
+
 
 # Gameplay Process:
 The game window initializes with borders, paddle, ball, and blocks.
