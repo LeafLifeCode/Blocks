@@ -107,6 +107,9 @@ class Ball(Ani):
                     self.by *= (-1)
                 pin.check()
                 score.up()
+    def Up(self):
+        self.bx+=0.2
+        self.by+=0.2
 
 class Obj(Ani):
     def __init__(self, shape):
@@ -133,6 +136,7 @@ class Obj(Ani):
             self.shape("Blocks1.gif")
 
 objarr=set()
+lvl_up=False
 player=Player("Panel.gif")
 border=Border("triangle")
 ball=Ball("circle")
@@ -146,6 +150,8 @@ turtle.onkeypress(player.Rt, "Right")
 
 wn.listen()
 wn.tracer(0)
+print(ball.bx)
+print(ball.by)
 while True:
     wn.update()
     ball.move()
@@ -154,13 +160,14 @@ while True:
         ball.check()
         if not(pin.isvisible()):
             c+=1
-        if c>blocks-1:
+            lvl_up=False
+        if c>blocks-1 and not lvl_up:
+            lvl_up=True
             c=0
             chat.clear()
             chat=[Obj("Block.gif") for pin in range(blocks)]
             ball.home()
-            ball.bx+=0.2
-            ball.by+=0.2
+            ball.Up()
             wn.update()
     if player.lives<1:
         score.over()
@@ -172,5 +179,4 @@ while True:
         break
 
 wn.exitonclick()
-
 print("Score:",player.score)
