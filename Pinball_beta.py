@@ -150,8 +150,6 @@ turtle.onkeypress(player.Rt, "Right")
 
 wn.listen()
 wn.tracer(0)
-print(ball.bx)
-print(ball.by)
 while True:
     wn.update()
     ball.move()
@@ -180,3 +178,4 @@ while True:
 
 wn.exitonclick()
 print("Score:",player.score)
+
